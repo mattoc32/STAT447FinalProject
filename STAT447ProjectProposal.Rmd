@@ -1,0 +1,46 @@
+---
+title: "STAT447 Project Proposal"
+author: 'Team: Matthew Ocampo (98817042)'
+date: "2025-03-14"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Link to public repository:
+
+https://github.com/mattoc32/STAT447FinalProject.git
+
+
+### Project Themes
+
+This project will aim to compare a Bayesian estimator with a non-Bayesian estimator, with the non-Bayesian estimator coming from a frequentist perspective. Bayesian regression will be compared to frequentist regression (OLS) to determine if a Bayesian model can better classify observations. I will look to build a frequentist OLS regression model using multiple coefficient estimates and compare it to a Bayesian regression model that follows a hierarchical structure. The aim will be to create a Bayesian hierarchical regression model that is a better predictor than the OLS regression model.
+
+### Datsets
+
+Link to datasets:
+
+https://baseballsavant.mlb.com/leaderboard/custom?year=2024%2C2023%2C2022%2C2021%2C2020%2C2019%2C2018%2C2017%2C2016%2C2015&type=batter&filter=&min=q&selections=pa%2Ck_percent%2Cbb_percent%2Cwoba%2Cxwoba%2Csweet_spot_percent%2Cbarrel_batted_rate%2Chard_hit_percent%2Cavg_best_speed%2Cavg_hyper_speed%2Cwhiff_percent%2Cswing_percent&chart=false&x=pa&y=pa&r=no&chartType=beeswarm&sort=xwoba&sortDir=desc
+
+
+The datasets I selected for this project are composed of Major League Baseball player data from 2016 to 2024. Player's are given a specific player ID for filtering, while the data consists of hitting statistics and metrics. Some examples of statistics include batting average, slugging percentage and home run count. These statistics serve as indicators of player success. On the other hand, some examples of metrics include average launch angle (angle at which a player swings the bat), average exit velocity (how hard they hit the ball) and whiff percentage (how often they swing and miss). These metrics are used to describe a hitter's swing attributes. 
+
+Both datasets contain baseball data, but the second one contains less variables in case analysis becomes too complicated with the first dataset. The second dataset is a filtered version of the first one. I will use the second dataset only if necessary or if instructed to.
+
+```{r, echo=TRUE}
+full_dataset <- read.csv("/Users/matthewocampo/Desktop/STAT 447/BaseballStatsFull.csv")
+
+modified_dataset <- read.csv("/Users/matthewocampo/Desktop/STAT 447/BaseballStatsModified.csv")
+
+head(full_dataset)
+head(modified_dataset)
+```
+### Tackling the Project Themes
+
+To tackle the project theme, I want to predict player success using player metrics. I want to build regression models that can predict a certain statistic, which again can be used to determine player success. In comparing Bayesian methods to frequentist methods, I want to build a Bayesian regression predictor that is better than a simple OLS regression model. In doing so, I hope to create a Bayesian predictor that takes in less variables than the OLS regression. Through this, I want to show that there are only certain hitter metrics that matter when predicting statistics (i.e. player success).
+
+
